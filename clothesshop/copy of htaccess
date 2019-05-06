@@ -1,0 +1,24 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+#DirectoryIndex index.php
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^about/ about.php [QSA]
+RewriteRule ^about about.php [QSA]
+
+RewriteRule ^contact/ contact.php [QSA]
+RewriteRule ^contact contact.php [QSA]
+
+RewriteRule ^store/item/([^\/]*)/?$ store-single.php?url=$1 [QSA]
+
+RewriteRule ^store/albums/([^\/]*)/?$ store-album.php?name=$1 [QSA]
+RewriteRule ^store/albums/?$ store-album.php [QSA]
+RewriteRule ^store/tag/([^\/]*)/?$ store-tag.php?tag=$1 [QSA]
+
+
+RewriteRule ^store/([^\/]*)/?$ store.php?cat=$1 [QSA]
+
+RewriteRule ^store/?$ store.php [QSA]
+</IfModule>
