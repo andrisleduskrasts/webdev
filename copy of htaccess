@@ -1,0 +1,22 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+DirectoryIndex index.php
+RewriteEngine On
+RewriteBase /~splitlath/
+
+RewriteRule ^about/ about.php [QSA]
+RewriteRule ^about about.php [QSA]
+
+RewriteRule ^services/ services.php [QSA]
+RewriteRule ^services services.php [QSA]
+
+RewriteRule ^projects/(\d+)/? projects.php?p=$1 [QSA]
+RewriteRule ^projects/([^\/]*)/? projects.php?name=$1 [QSA]
+RewriteRule ^projects/ projects.php [QSA]
+RewriteRule ^projects projects.php [QSA]
+
+RewriteRule ^contact/ contact.php [QSA]
+RewriteRule ^contact contact.php [QSA]
+
+</IfModule>
